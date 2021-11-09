@@ -57,6 +57,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('task_category_id')->nullable()->constrained('task_categories');
             $table->date('due_date')->nullable();
             $table->foreignId('task_resolution_id')->nullable()->constrained('task_resolutions');
+            $table->string('detail')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
