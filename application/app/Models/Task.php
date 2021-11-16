@@ -29,6 +29,7 @@ class Task extends Model
         'task_category_id',
         'due_date',
         'task_resolution_id',
+        'detail'
     ];
 
     /**
@@ -126,5 +127,13 @@ class Task extends Model
     public function task_resolution()
     {
         return $this->belongsTo(TaskResolution::class, 'task_resolution_id');
+    }
+
+    /**
+     * 課題の詳細を取得.
+     */
+    public function detail()
+    {
+        return $this->belongsTo(Task::class, 'detail');
     }
 }
