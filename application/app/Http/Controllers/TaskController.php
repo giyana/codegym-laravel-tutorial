@@ -81,6 +81,7 @@ class TaskController extends Controller
         $task_statuses = TaskStatus::all();
         $task_categories = TaskCategory::all();
         $assigners = User::all();
+        $detail = Task::get('detail');
 
         return view('tasks.create', [
             'project' => $project,
@@ -88,6 +89,7 @@ class TaskController extends Controller
             'task_statuses' => $task_statuses,
             'task_categories' => $task_categories,
             'assigners' => $assigners,
+            'detail' => $detail
         ]);
     }
 
