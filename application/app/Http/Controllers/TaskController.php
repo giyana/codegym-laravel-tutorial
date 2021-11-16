@@ -109,6 +109,7 @@ class TaskController extends Controller
             'task_category_id' => 'nullable|integer',
             'task_resolution_id' => 'nullable|integer',
             'due_date' => 'nullable|date',
+            'detail' => 'nullable|string|max:1000'
         ]);
 
         if (Task::create([
@@ -120,6 +121,7 @@ class TaskController extends Controller
             'task_category_id' => $request->task_category_id,
             'due_date' => $request->due_date,
             'created_user_id' => $request->user()->id,
+            'detail' => $request->detail
         ])) {
             $flash = ['success' => __('Task created successfully.')];
         } else {
