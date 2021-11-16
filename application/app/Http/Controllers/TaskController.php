@@ -185,6 +185,7 @@ class TaskController extends Controller
             'task_category_id' => 'nullable|integer',
             'task_resolution_id' => 'nullable|integer',
             'due_date' => 'nullable|date',
+            'detail' => 'nullable|string|max:1000'
         ]);
 
         if ($task->update($request->all())) {
