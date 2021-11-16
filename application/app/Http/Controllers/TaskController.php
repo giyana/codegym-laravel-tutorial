@@ -155,6 +155,7 @@ class TaskController extends Controller
         $task_statuses = TaskStatus::all();
         $task_categories = TaskCategory::all();
         $assigners = User::all();
+        $detail = Task::get('detail');
 
         return view('tasks.edit', [
             'project' => $project,
@@ -163,6 +164,7 @@ class TaskController extends Controller
             'task_categories' => $task_categories,
             'assigners' => $assigners,
             'task' => $task,
+            'detail' => $detail
         ]);
     }
 
