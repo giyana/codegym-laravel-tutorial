@@ -97,6 +97,13 @@
                 </div>
 
                 <div class="-mx-3 md:flex mb-6">
+                    <div class="md:w-full mb-6 px-3">
+                        <x-label for="detail" :value="__('Detail')" class="{{ $errors->has('detail') ? 'text-red-600' :'' }}" />
+                        <x-textarea id="detail" class="block mt-1 w-full h-64 whitespace-normal {{ $errors->has('detail') ? 'border-red-600' :'' }}" type="text" name="detail" :value="old('detail',$task->detail)" placeholder="課題の詳細" autofocus />
+                    </div>
+                </div>
+
+                <div class="-mx-3 md:flex mb-6">
                     <div class="md:w-1/4 px-3 mb-6">
                         <x-label for="task_status_id" :value="__('Task Status')" class="{{ $errors->has('task_status_id') ? 'text-red-600' :'' }}" />
                         <x-select :options="$task_statuses" id="task_status_id" class="block mt-1 w-full {{ $errors->has('task_status_id') ? 'border-red-600' :'' }}" type="text" name="task_status_id" :value="old('task_status_id', $task->task_status_id)" required autofocus />
